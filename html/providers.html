@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jahaira Store</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+    <script src="/javascript/menu-header.js" defer></script>
+    <script src="/javascript/providers.js" defer></script>
+</head>
+<body class="flex">
+    <!--Invisible div to close menu on click-->
+    <div class="div-menu-close"></div>
+    <side-menu></side-menu>
+
+    <!--Main section-->
+    <main class="flex flx-col main-section">
+
+        <store-header></store-header>
+
+        <!--Main content-->
+        <h2>Proveedores</h2>
+        
+        <div class="flex flx-center action-buttons">
+            <search class="flex flx-center frm-data">
+                <img src="/assets/icons/action-search.png" alt="Buscar">
+                <input type="text" id="search-bar-providers" class="frm-data-input" placeholder="Buscar">
+            </search>
+            <a href="/html/provider-info.html" class="flex flx-center action-btn">
+                <img src="/assets/icons/action-new.png" alt="Nuevo">
+            </a>
+            <button class="flex flx-center action-btn">
+                <img src="/assets/icons/action-filter.png" alt="Filtrar">
+            </button>
+        </div>
+        
+        <section class="main-content">
+            <table class="table tbl-providers">
+                <tbody class="tbl-providers-rows"></tbody>
+            </table>
+        </section>
+    
+    </main>
+</body>
+</html>
