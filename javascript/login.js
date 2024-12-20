@@ -3,46 +3,56 @@ const loginPassword = document.querySelector('#login-password');
 const loginButton = document.querySelector('#login-button');
 const spanUserError = document.querySelector('#span-user-error');
 const spanPasswordError = document.querySelector('#span-password-error');
-let user = 'rey';
-let password = '0000';
 
-let users = {
-    'rey': '0000',
-    'Jahaira': '11102004'
-}
+//user data to validate
+const usersDatabase = [
+    {
+        username: 'rey',
+        password: '0000'
+    },
+    {
+        username: 'test',
+        password: '1234'
+    }
+];
 
-let validatedUser = false;
-let validatedPassword = false;
+//add event to login button
+loginButton.addEventListener('click', login);
 
-loginButton.addEventListener('click', validateLogin);
+//add event to password input when enter key pressed
 loginPassword.addEventListener('keypress', function onEvent (event) {
     if (event.keyCode === 13) {
-        validateLogin();
+        login();
     }
 });
 
-function validateLogin() {
+function login() {
+    
+    let userSearch = usersDatabase.find(usr => usr.username === loginUser.value);
+    
+    //Check if inputs are empty
     if (loginUser.value === "") {
         spanUserError.innerHTML = 'Ingrese un usuario';
-    } else if (loginUser.value !== user) {
-        spanUserError.innerHTML = 'Usuario incorrecto';
-        validatedUser = false;
+        return;
     } else {
-        spanUserError.innerHTML = '';
-        validatedUser = true;
+        //check if username exists in database
+        if (userSearch === undefined) {
+            spanUserError.innerHTML = 'El usuario no existe';
+            return;
+        } else {
+            spanUserError.innerHTML = '';
+        }
     }
 
     if (loginPassword.value === "") {
         spanPasswordError.innerHTML = 'Ingrese una contraseña';
-    } else if (loginPassword.value !== password) {
-        spanPasswordError.innerHTML = 'Contraseña incorrecta';
-        validatedPassword = false
     } else {
-        spanPasswordError.innerHTML = '';
-        validatedPassword = true;
-    }
-
-    if (validatedUser && validatedPassword) {
-        window.location.href = '/html/home.html';
+        //check if password exists in database
+        if (loginPassword.value !== userSearch.password) {
+            spanPasswordError.innerHTML = 'La contraseña es incorrecta';
+        } else {
+            spanPasswordError.innerHTML = '';
+            window.location.href = '/html/home.html';
+        }
     }
 }

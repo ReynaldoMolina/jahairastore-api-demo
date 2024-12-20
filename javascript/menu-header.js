@@ -95,6 +95,7 @@ class StoreHeader extends HTMLElement {
 customElements.define('side-menu', SideMenu);
 customElements.define('store-header', StoreHeader);
 
+//Side menu
 const menuToggle = document.querySelector('#menu-button');
 const sideMenu = document.querySelector('.side-menu');
 const invisibleDiv = document.querySelector('.div-menu-close');

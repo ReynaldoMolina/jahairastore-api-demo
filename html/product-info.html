@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/info.css">
     <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
     <script src="/javascript/menu-header.js" defer></script>
+    <script src="/javascript/main.js" defer></script>
+    <script src="/javascript/product-info.js" defer></script>
 </head>
 <body class="flex">
     <!--Invisible div to close menu on click-->
@@ -52,9 +54,10 @@
                     <div class="flex"></div>
                     <div class="flex flx-col">
                         <label for="proveedor" class="frm-label">Proveedor</label>
-                        <input type="text" name="proveedor" id="proveedor" class="frm-data-input2" placeholder="Proveedor" required>
+                        <select name="proveedor" id="proveedor" class="frm-data-input2" required></select>
+
                         <label for="categoria" class="frm-label">Categoría</label>
-                        <input type="text" name="categoria" id="categoria" class="frm-data-input2" placeholder="Categoría" required>
+                        <select name="categoria" id="categoria" class="frm-data-input2" required></select>
                     </div>
                 </div>
                 

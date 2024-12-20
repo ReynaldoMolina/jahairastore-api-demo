@@ -1,3 +1,38 @@
+let myCategories = [
+    {
+        'id_categoria': 1,
+        'nombre_categoria': 'Shein',
+    },
+    {
+        'id_categoria': 2,
+        'nombre_categoria': 'Shein',
+    },    {
+        'id_categoria': 3,
+        'nombre_categoria': 'Shein',
+    },    {
+        'id_categoria': 4,
+        'nombre_categoria': 'Shein',
+    },    {
+        'id_categoria': 5,
+        'nombre_categoria': 'Shein',
+    },    {
+        'id_categoria': 6,
+        'nombre_categoria': 'Shein',
+    },    {
+        'id_categoria': 7,
+        'nombre_categoria': 'Shein',
+    },    {
+        'id_categoria': 8,
+        'nombre_categoria': 'Shein',
+    },    {
+        'id_categoria': 9,
+        'nombre_categoria': 'Shein',
+    },    {
+        'id_categoria': 10,
+        'nombre_categoria': 'Shein',
+    }
+];
+
 let myProviders = [
     {
         'id_proveedor': 1,
@@ -101,7 +136,8 @@ let myProviders = [
     }
 ];
 
-let columns = [0, 1];
+let columnsCategories = [0, 1];
+let columnsProviders = [0, 1];
 
-getTableRows(myProviders, columns);
-displayTableMenu();
+getSelectOptions(myCategories, columnsCategories, '#categoria')
+getSelectOptions(myProviders, columnsProviders, '#proveedor')
