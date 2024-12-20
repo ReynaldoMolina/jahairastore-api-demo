@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
     <script src="/javascript/menu-header.js" defer></script>
+    <script src="/javascript/object-data.js" defer></script>
     <script src="/javascript/main.js" defer></script>
-    <script src="/javascript/product-categories.js" defer></script>
+    <script src="/javascript/unique-page.js" defer></script>
 </head>
 <body class="flex">
     <!--Invisible div to close menu on click-->
@@ -21,14 +22,14 @@
         <store-header></store-header>
 
         <!--Main content-->
-        <h2>Categorías de productos</h2>
+        <h2 id="page-title"></h2>
         
         <div class="flex flx-center action-buttons">
             <search class="flex flx-center frm-data">
                 <img src="/assets/icons/action-search.png" alt="Buscar">
-                <input type="text" id="search-bar-clients" class="frm-data-input" placeholder="Buscar">
+                <input type="search" id="search-bar-clients" class="frm-data-input" placeholder="Buscar">
             </search>
-            <a href="/html/product-category-info.html" class="flex flx-center action-btn">
+            <a id="new-register" class="flex flx-center action-btn">
                 <img src="/assets/icons/action-new.png" alt="Nuevo">
             </a>
             <button class="flex flx-center action-btn">
@@ -37,7 +38,7 @@
         </div>
         
         <section class="main-content">
-            <table class="table tbl-categories">
+            <table class="table tbl-clients">
                 <tbody class="tbl-rows"></tbody>
             </table>
         </section>

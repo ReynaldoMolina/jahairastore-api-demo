@@ -18,15 +18,15 @@ class SideMenu extends HTMLElement {
                     <!--Divider-->
                     <div class="side-menu-divider"></div>
 
-                    <a href="/html/unique-page.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(0)">
+                    <a href="/html/object-table.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(0)">
                         <img src="/assets/icons/menu-clients.png" alt="Clientes">
                         Clientes
                     </a>
-                    <a href="/html/orders.html" class="flex flx-center side-menu-opt">
+                    <a href="/html/object-table.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(1)">
                         <img src="/assets/icons/menu-orders.png" alt="Pedidos">
                         Pedidos
                     </a>
-                    <a href="/html/receipts.html" class="flex flx-center side-menu-opt">
+                    <a href="/html/object-table.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(2)">
                         <img src="/assets/icons/menu-receipts.png" alt="Recibos">
                         Recibos
                     </a>
@@ -34,15 +34,15 @@ class SideMenu extends HTMLElement {
                     <!--Divider-->
                     <div class="side-menu-divider"></div>
                     
-                    <a href="/html/providers.html" class="flex flx-center side-menu-opt">
+                    <a href="/html/object-table.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(3)">
                         <img src="/assets/icons/menu-providers.png" alt="Proveedores">
                         Proveedores
                     </a>
-                    <a href="/html/purchases.html" class="flex flx-center side-menu-opt">
+                    <a href="/html/object-table.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(4)">
                         <img src="/assets/icons/menu-purchases.png" alt="Compras">
                         Compras
                     </a>
-                    <a href="/html/expenses.html" class="flex flx-center side-menu-opt">
+                    <a href="/html/object-table.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(5)">
                         <img src="/assets/icons/menu-expenses.png" alt="Gastos">
                         Gastos
                     </a>
@@ -50,11 +50,11 @@ class SideMenu extends HTMLElement {
                     <!--Divider-->
                     <div class="side-menu-divider"></div>
 
-                    <a href="/html/products.html" class="flex flx-center side-menu-opt">
+                    <a href="/html/object-table.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(6)">
                         <img src="/assets/icons/menu-products.png" alt="Productos">
                         Productos
                     </a>
-                    <a href="/html/product-categories.html" class="flex flx-center side-menu-opt">
+                    <a href="/html/object-table.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(7)">
                         <img src="/assets/icons/menu-categories.png" alt="Categorías">
                         Categorías
                     </a>

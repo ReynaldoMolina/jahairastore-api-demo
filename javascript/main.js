@@ -78,3 +78,7 @@ function getSelectOptions(data, columns, elementId) {
 
     selectOptions.innerHTML = tags;
 }
+
+function setMenuOption(option) {
+    localStorage.setItem('menuOptionGlobal', option);
+}
