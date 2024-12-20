@@ -18,7 +18,7 @@ class SideMenu extends HTMLElement {
                     <!--Divider-->
                     <div class="side-menu-divider"></div>
 
-                    <a href="/html/clients.html" class="flex flx-center side-menu-opt">
+                    <a href="/html/unique-page.html" class="flex flx-center side-menu-opt" onclick="setMenuOption(0)">
                         <img src="/assets/icons/menu-clients.png" alt="Clientes">
                         Clientes
                     </a>

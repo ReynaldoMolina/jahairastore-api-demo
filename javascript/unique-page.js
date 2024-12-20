@@ -1,5 +1,3 @@
-//const searchClientInput = document.querySelector('#search-bar-clients');
-
 function getTableRows(data, columns) {
 
     let dataColumns = Object.keys(data[0]);
@@ -78,3 +76,29 @@ function getSelectOptions(data, columns, elementId) {
 
     selectOptions.innerHTML = tags;
 }
+
+/*TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
+
+function loadPageAccordingToMenuOption(menuOption) {
+    //get option object
+    let menuObject = sideMenuOptions[menuOption];
+
+    //assign page title
+    const pageTitle = document.querySelector('#page-title');
+    pageTitle.innerHTML = menuObject.name;
+
+    //call function to load respective table
+    getTableRows(menuObject.data, menuObject.columns);
+    displayTableMenu();
+
+    //assign href to new button
+    let newButton = document.querySelector('#new-register');
+    newButton.setAttribute('href', menuObject.newRegisterLink);
+}
+
+function setMenuOption(option) {
+    localStorage.setItem('menuOptionGlobal', option);
+}
+
+let menuOptionGlobal = localStorage.getItem("menuOptionGlobal");
+loadPageAccordingToMenuOption(menuOptionGlobal);

@@ -124,6 +124,7 @@ h1 {
 .frm-container {
     height: auto;
     width: 100%;
+    max-width: 500px;
     padding: 0 1px;
 }
 .frm-container .frm-label:first-child {
