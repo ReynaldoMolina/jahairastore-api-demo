@@ -1,0 +1,28 @@
+{
+  "name": "store-orden-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReynaldoMolina/store-order-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ReynaldoMolina/store-order-system/issues"
+  },
+  "homepage": "https://github.com/ReynaldoMolina/store-order-system#readme",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.3.0",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}

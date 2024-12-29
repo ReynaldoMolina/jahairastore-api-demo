@@ -18,3 +18,7 @@
 .client-frm-btn input {
     width: 50%;
 }
+.client-frm-btn a {
+    width: 50%;
+    font-size: 1.3rem;
+}

@@ -465,6 +465,6 @@ let sideMenuOptions = [
         name: 'Categorías',
         data: categories,
         columns: [0, 1],
-        newRegisterLink: '/html/category-info.html'
+        newRegisterLink: '/html/product-category-info.html'
     }
 ];
