@@ -23,11 +23,11 @@ router.get('/:id',
   validatorHandler(getClientSchema, 'params'),
   async (req, res, next) => {
     try {
-        const { id } = req.params;
-        const client = await service.findOne(id);
-        res.json(client);
+      const { id } = req.params;
+      const client = await service.findOne(id);
+      res.json(client);
     } catch (error) {
-        next(error);
+      next(error);
     }
   }
 );

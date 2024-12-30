@@ -12,9 +12,13 @@ class ClientsService {
         for (let index = 0; index < limit; index++) {
             this.clients.push({
                 id: (index + 1).toString(),
-                name: faker.person.fullName(),
-                gender: faker.person.sex(),
-                isBlocked: faker.datatype.boolean()
+                name: faker.person.firstName(),
+                lastname: faker.person.lastName(),
+                phone: "+505 1234 5678",
+                municipio: faker.location.city(),
+                departamento: faker.location.city(),
+                country: faker.location.country(),
+                address: faker.location.streetAddress()
             });
         }
     }
@@ -29,11 +33,7 @@ class ClientsService {
     }
 
     find() {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(this.clients);
-            }, 2000);
-        });
+        return this.clients;
     }
 
     findOne(id) {
