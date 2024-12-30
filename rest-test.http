@@ -1,6 +1,7 @@
-PATCH http://localhost:3000/api/v1/clients/2222
+PATCH http://localhost:3000/api/v1/clients/588636983624374
 Content-Type: application/json
 
 {
-    "name": "teta"
+    "name": 1,
+    "query": "SELECT * FROM clients"
 }

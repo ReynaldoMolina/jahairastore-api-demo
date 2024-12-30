@@ -1,4 +1,5 @@
 const { faker } = require('@faker-js/faker');
+const boom = require('@hapi/boom');
 
 class ClientsService {
     constructor() {
@@ -12,7 +13,8 @@ class ClientsService {
             this.clients.push({
                 id: (index + 1).toString(),
                 name: faker.person.fullName(),
-                gender: faker.person.sex()
+                gender: faker.person.sex(),
+                isBlocked: faker.datatype.boolean()
             });
         }
     }
@@ -30,18 +32,25 @@ class ClientsService {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(this.clients);
-            }, 5000);
+            }, 2000);
         });
     }
 
     findOne(id) {
-        return this.clients.find((client) => client.id === id);
+        const client = this.clients.find((client) => client.id === id);
+        if (!client) {
+            throw boom.notFound('client not found');
+        }
+        if (client.isBlocked) {
+            throw boom.conflict('client is blocked');
+        }
+        return client;
     }
 
     update(id, changes) {
         const index = this.clients.findIndex((client) => client.id === id);
         if (index === -1) {
-            throw new Error('register not found');
+            throw boom.notFound('client not found');
         }
         const client = this.clients[index];
 
@@ -55,7 +64,7 @@ class ClientsService {
     delete(id) {
         const index = this.clients.findIndex((client) => client.id === id);
         if (index === -1) {
-            throw new Error('register not found');
+            throw boom.notFound('client not found');
         }
         this.clients.splice(index, 1);
         return { id };
