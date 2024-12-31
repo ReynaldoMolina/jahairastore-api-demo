@@ -1,7 +1,1 @@
-PATCH http://localhost:3000/api/v1/clients/588636983624374
-Content-Type: application/json
-
-{
-    "name": 1,
-    "query": "SELECT * FROM clients"
-}
+GET http://localhost:3000/api/v1/orders/
