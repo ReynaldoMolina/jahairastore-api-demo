@@ -21,7 +21,12 @@ const createClientSchema = Joi.object({
 
 const updateClientSchema = Joi.object({
     name: name,
-    lastname: lastname
+    lastname: lastname,
+    phone: phone,
+    municipio: municipio,
+    departamento: departamento,
+    country: country,
+    address: address
 });
 
 const getClientSchema = Joi.object({
