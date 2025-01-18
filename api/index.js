@@ -13,7 +13,7 @@ app.use(express.json());
 const whitelist = [
   'http://127.0.0.1:5500',
   'http://192.168.1.9:5500',
-  'http://127.0.0.1:3000'
+  'http://192.168.1.9:3000/store-front',
   'https://reynaldomolina.github.io/store-front'
 ];
 const options = {
