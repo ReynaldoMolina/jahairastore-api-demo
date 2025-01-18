@@ -10,7 +10,12 @@ const port = process.env.port || 3000;
 
 app.use(express.json());
 
-const whitelist = ['http://127.0.0.1:5500', 'http://192.168.1.9:5500', 'https://reynaldomolina.github.io/store-front'];
+const whitelist = [
+  'http://127.0.0.1:5500',
+  'http://192.168.1.9:5500',
+  'http://127.0.0.1:3000'
+  'https://reynaldomolina.github.io/store-front'
+];
 const options = {
   origin: (origin, callback) => {
     if (whitelist.includes(origin) || !origin) {
