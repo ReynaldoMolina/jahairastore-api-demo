@@ -11,9 +11,8 @@ const port = process.env.port || 3000;
 app.use(express.json());
 
 const whitelist = [
-  'http://127.0.0.1:5500',
-  'http://192.168.1.9:5500',
-  'http://192.168.1.9:3000/store-front',
+  'http://127.0.0.1:3001',
+  'http://192.168.1.9:3001',
   'https://reynaldomolina.github.io'
 ];
 const options = {
