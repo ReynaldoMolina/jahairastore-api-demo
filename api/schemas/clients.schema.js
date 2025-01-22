@@ -1,13 +1,13 @@
 const Joi = require('joi');
 
 const id = Joi.number().integer();
-const name = Joi.string().min(3).max(15);
-const lastname = Joi.string().min(3).max(15);
-const phone = Joi.string().min(3).max(15);
-const municipio = Joi.string().min(3).max(15);
-const departamento = Joi.string().min(3).max(15);
-const country = Joi.string().min(3).max(15);
-const address = Joi.string().min(3).max(15);
+const name = Joi.string().max(40);
+const lastname = Joi.string().max(40);
+const phone = Joi.string().max(30);
+const municipio = Joi.string().max(40);
+const departamento = Joi.string().max(40);
+const country = Joi.string().max(40);
+const address = Joi.string().max(100);
 
 const createClientSchema = Joi.object({
     name: name.required(),

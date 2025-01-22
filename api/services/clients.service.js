@@ -8,7 +8,7 @@ class ClientsService {
     }
 
     generate() {
-        const limit = 50;
+        const limit = 10;
         for (let index = 0; index < limit; index++) {
             this.clients.push({
                 id: (index + 1).toString(),
