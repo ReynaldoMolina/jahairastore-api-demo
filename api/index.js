@@ -6,13 +6,14 @@ const routerApi = require('./routes');
 const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler');
 
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.port || 3001;
 
 app.use(express.json());
 
 const whitelist = [
-  'http://127.0.0.1:3001',
-  'http://192.168.1.9:3001',
+  'http://localhost:3000',
+  'http://localhost:5500',
+  'http://192.168.1.9:3000',
   'https://reynaldomolina.github.io'
 ];
 const options = {
