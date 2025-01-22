@@ -30,7 +30,7 @@ app.use(cors(options));
 
 //create endpoints
 app.get('/api', (req, res) => {
-  res.send('Hola, esta es la pagina de la tienda');
+  res.send('Welcome to the Jahaira Store API');
 });
 
 routerApi(app);
