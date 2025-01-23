@@ -28,7 +28,7 @@ class CategoriesService {
 
     async create(data) {
         const newCategory = {
-            id: faker.number.int(),
+            id: faker.number.int({max:10000}),
             ...data
         }
         this.categories.push(newCategory);

@@ -22,7 +22,7 @@ class OrdersService {
 
     async create(data) {
         const newOrder = {
-            id: faker.number.int(),
+            id: faker.number.int({max: 10000}),
             ...data
         }
         this.orders.push(newOrder);

@@ -25,7 +25,7 @@ class ClientsService {
 
     async create(data) {
         const newClient = {
-            id: faker.number.int(),
+            id: faker.number.int({max: 10000}),
             ...data
         }
         this.clients.push(newClient);
