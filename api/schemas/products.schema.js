@@ -8,7 +8,6 @@ const name = Joi.string().max(40);
 const addedDate = Joi.date();
 const costPrice = Joi.number().precision(2);
 const sellPrice = Joi.number().precision(2);
-const profit = Joi.number().precision(2);
 const description = Joi.string().max(200);
 
 const createProductSchema = Joi.object({
@@ -19,7 +18,6 @@ const createProductSchema = Joi.object({
     addedDate: addedDate.required(),
     costPrice: costPrice.required(),
     sellPrice: sellPrice.required(),
-    profit: profit,
     description: description
 });
 
@@ -31,7 +29,6 @@ const updateProductSchema = Joi.object({
     addedDate: addedDate,
     costPrice: costPrice,
     sellPrice: sellPrice,
-    profit: profit,
     description: description
 });
 
