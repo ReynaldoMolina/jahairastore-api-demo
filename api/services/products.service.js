@@ -12,7 +12,7 @@ class ProductsService {
         for (let index = 0; index < limit; index++) {
             this.products.push({
                 id: (index + 1).toString(),
-                sheinId: faker.number.int({max: 1000000}),
+                sheinId: faker.number.int({min: 100000, max: 999999}),
                 provider: faker.company.name(),
                 category: "Shein",
                 name: faker.commerce.productName(),
@@ -27,16 +27,12 @@ class ProductsService {
 
     async create(data) {
         const newProduct = {
-            id: faker.number.int({max: 10000}),
+            id: faker.number.int({max: 10000}).toString(),
             ...data
         }
         this.products.push(newProduct);
         return newProduct;
     }
-
-    /*find() {
-        return this.products;
-    }*/
 
     find() {
         return this.products.map(({ id, name, costPrice, sellPrice }) => ({

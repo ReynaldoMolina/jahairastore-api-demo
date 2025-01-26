@@ -25,7 +25,7 @@ class ProvidersService {
 
     async create(data) {
         const newProvider = {
-            id: faker.number.int({max: 10000}),
+            id: faker.number.int({max: 10000}).toString(),
             ...data
         }
         this.providers.push(newProvider);

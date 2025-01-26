@@ -9,7 +9,6 @@ const abono = Joi.number().precision(2);
 const saldo = Joi.number().precision(2);
 
 const createOrderSchema = Joi.object({
-    id: id.required(),
     clientId: clientId.required(),
     orderDate: orderDate.required(),
     delivered: delivered,
@@ -19,7 +18,6 @@ const createOrderSchema = Joi.object({
 });
 
 const updateOrderSchema = Joi.object({
-    id: id,
     clientId: clientId,
     delivered: delivered,
     orderDate: orderDate,

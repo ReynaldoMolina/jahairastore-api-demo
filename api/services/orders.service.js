@@ -25,7 +25,7 @@ class OrdersService {
 
     async create(data) {
         const newOrder = {
-            id: faker.number.int({max: 1000}),
+            id: faker.number.int({min:20, max: 1000}).toString(),
             ...data
         }
         this.orders.push(newOrder);
@@ -33,8 +33,8 @@ class OrdersService {
     }
 
     find() {
-        return this.orders.map(({ id, orderDate, clientId, total, abono,saldo }) => ({
-            id, orderDate, clientId, total, abono,saldo
+        return this.orders.map(({ id, orderDate, clientId, total, abono, saldo }) => ({
+            id, orderDate, clientId, total, abono, saldo
         }));
     }
 

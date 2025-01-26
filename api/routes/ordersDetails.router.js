@@ -1,16 +1,16 @@
 //create app with express
 const express = require('express');
-const ClientsService = require('./../services/clients.service')
-const validatorHandler = require('./../middlewares/validator.handler');
-const { createClientSchema, updateClientSchema, getClientSchema } = require('./../schemas/clients.schema');
+const OrdersDetailsService = require('../services/ordersDetails.service')
+const validatorHandler = require('../middlewares/validator.handler');
+const { createOrderSchema, updateOrderSchema, getOrderSchema } = require('../schemas/ordersDetails.schema');
 
 const router = express.Router();
-const service = new ClientsService();
+const service = new OrdersDetailsService();
 
 //get all registers
 router.get('/', async (req, res) => {
-    const clients = await service.find();
-    res.json(clients);
+    const ordersDetails = await service.find();
+    res.json(ordersDetails);
 });
 
 //register filter
@@ -20,14 +20,12 @@ router.get('/filter', (req, res) => {
 
 //get url parameters - get one register
 router.get('/:id',
-  validatorHandler(getClientSchema, 'params'),
+  validatorHandler(getOrderSchema, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
-      console.log(id);
-      
-      const client = await service.findOne(id);
-      res.json(client);
+      const orderDetails = await service.findOne(id);
+      res.json(orderDetails);
     } catch (error) {
       next(error);
     }
@@ -36,24 +34,24 @@ router.get('/:id',
 
 //create register
 router.post('/',
-  validatorHandler(createClientSchema, 'body'),
+  validatorHandler(createOrderSchema, 'body'),
   async (req, res) => {
     const body = req.body;
-    const newClient = await service.create(body);
-    res.status(201).json(newClient);
+    const newOrderDetail = await service.create(body);
+    res.status(201).json(newOrderDetail);
   }
 );
 
 //update register (some data)
 router.patch('/:id',
-  validatorHandler(getClientSchema, 'params'),
-  validatorHandler(updateClientSchema, 'body'),
+  validatorHandler(getOrderSchema, 'params'),
+  validatorHandler(updateOrderSchema, 'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
       const body = req.body;
-      const client = await service.update(id, body);
-      res.json(client);
+      const orderDetails = await service.update(id, body);
+      res.json(orderDetails);
     } catch (error) {
       next(error);
     }
@@ -64,8 +62,8 @@ router.patch('/:id',
 router.delete('/:id', async (req, res, next) => {
     try {
         const { id } = req.params;
-        const client = await service.delete(id);
-        res.json(client);
+        const orderDetails = await service.delete(id);
+        res.json(orderDetails);
     } catch (error) {
         next(error);
     }

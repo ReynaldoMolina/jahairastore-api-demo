@@ -5,15 +5,15 @@ class CategoriesService {
     constructor() {
         this.categories = [
             {
-                id: "1",
+                id: '1',
                 name: "Shein"
             },
             {
-                id: "2",
+                id: '2',
                 name: "Útiles escolares"
             },
             {
-                id: "3",
+                id: '3',
                 name: "Ropa"
             },
         ];
@@ -21,7 +21,7 @@ class CategoriesService {
 
     async create(data) {
         const newCategory = {
-            id: faker.number.int({max:1000}),
+            id: faker.number.int({min: 20, max:100}).toString(),
             ...data
         }
         this.categories.push(newCategory);
