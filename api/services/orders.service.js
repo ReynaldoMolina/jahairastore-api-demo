@@ -14,7 +14,8 @@ class OrdersService {
                 id: (index + 1).toString(),
                 clientId: faker.number.int({min: 0, max: 20}),
                 delivered: faker.datatype.boolean(),
-                orderDate: faker.date.past({years: 1}).toLocaleDateString('en-US'),
+                // orderDate: faker.date.past({years: 1}).toLocaleDateString('es-NI'),
+                orderDate: faker.date.past({years: 1}).toISOString().substring(0, 10),
                 total: faker.commerce.price(),
                 abono: faker.commerce.price(),
                 saldo: faker.commerce.price()

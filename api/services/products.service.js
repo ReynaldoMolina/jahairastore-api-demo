@@ -16,7 +16,7 @@ class ProductsService {
                 provider: faker.company.name(),
                 category: "Shein",
                 name: faker.commerce.productName(),
-                addedDate: faker.date.past({years: 1}).toLocaleDateString('en-US'),
+                addedDate: faker.date.past({years: 1}).toISOString().substring(0, 10),
                 costPrice: faker.commerce.price(),
                 sellPrice: faker.commerce.price(),
                 profit: faker.commerce.price(),
