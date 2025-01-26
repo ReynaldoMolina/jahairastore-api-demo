@@ -8,7 +8,7 @@ class OrdersService {
     }
 
     generate() {
-        const limit = 50;
+        const limit = 20;
         for (let index = 0; index < limit; index++) {
             this.orders.push({
                 id: (index + 1).toString(),

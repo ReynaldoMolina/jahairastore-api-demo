@@ -8,7 +8,7 @@ class ProductsService {
     }
 
     generate() {
-        const limit = 10;
+        const limit = 20;
         for (let index = 0; index < limit; index++) {
             this.products.push({
                 id: (index + 1).toString(),
