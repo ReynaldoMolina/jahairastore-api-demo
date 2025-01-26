@@ -6,29 +6,22 @@ class CategoriesService {
         this.categories = [
             {
                 id: "1",
-                name: "Clothes"
+                name: "Shein"
             },
             {
                 id: "2",
-                name: "Shein"
+                name: "Útiles escolares"
+            },
+            {
+                id: "3",
+                name: "Ropa"
             },
         ];
-        // this.generate();
     }
-
-    // generate() {
-    //     const limit = 10;
-    //     for (let index = 0; index < limit; index++) {
-    //         this.categories.push({
-    //             id: (index + 1).toString(),
-    //             name: faker.,
-    //         });
-    //     }
-    // }
 
     async create(data) {
         const newCategory = {
-            id: faker.number.int({max:10000}),
+            id: faker.number.int({max:1000}),
             ...data
         }
         this.categories.push(newCategory);
@@ -36,7 +29,10 @@ class CategoriesService {
     }
 
     find() {
-        return this.categories;
+        return this.categories.map(({ id, name }) => ({
+            id,
+            name
+        }));
     }
 
     findOne(id) {

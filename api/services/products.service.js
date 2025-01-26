@@ -16,7 +16,7 @@ class ProductsService {
                 provider: faker.company.name(),
                 category: "Shein",
                 name: faker.commerce.productName(),
-                addedDate: faker.date.past({years: 1}),
+                addedDate: faker.date.past({years: 1}).toLocaleDateString('en-US'),
                 costPrice: faker.commerce.price(),
                 sellPrice: faker.commerce.price(),
                 profit: faker.commerce.price(),
@@ -34,8 +34,17 @@ class ProductsService {
         return newProduct;
     }
 
-    find() {
+    /*find() {
         return this.products;
+    }*/
+
+    find() {
+        return this.products.map(({ id, name, costPrice, sellPrice }) => ({
+            id,
+            name,
+            costPrice,
+            sellPrice
+        }));
     }
 
     findOne(id) {

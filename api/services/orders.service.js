@@ -12,7 +12,9 @@ class OrdersService {
         for (let index = 0; index < limit; index++) {
             this.orders.push({
                 id: (index + 1).toString(),
-                name: faker.person.firstName(),
+                clientId: faker.number.int({min: 0, max: 20}),
+                delivered: faker.datatype.boolean(),
+                orderDate: faker.date.past({years: 1}).toLocaleDateString('en-US'),
                 total: faker.commerce.price(),
                 abono: faker.commerce.price(),
                 saldo: faker.commerce.price()
@@ -22,7 +24,7 @@ class OrdersService {
 
     async create(data) {
         const newOrder = {
-            id: faker.number.int({max: 10000}),
+            id: faker.number.int({max: 1000}),
             ...data
         }
         this.orders.push(newOrder);
@@ -30,7 +32,9 @@ class OrdersService {
     }
 
     find() {
-        return this.orders;
+        return this.orders.map(({ id, orderDate, clientId, total, abono,saldo }) => ({
+            id, orderDate, clientId, total, abono,saldo
+        }));
     }
 
     findOne(id) {

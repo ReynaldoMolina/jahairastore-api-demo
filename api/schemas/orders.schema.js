@@ -1,23 +1,31 @@
 const Joi = require('joi');
 
 const id = Joi.number().integer();
-const name = Joi.string().min(3).max(15);
-const total = Joi.number().min(1);
-const abono = Joi.number().min(1);
-const saldo = Joi.number().min(1);
+const clientId = Joi.number();
+const orderDate = Joi.date();
+const delivered = Joi.bool();
+const total = Joi.number().precision(2);
+const abono = Joi.number().precision(2);
+const saldo = Joi.number().precision(2);
 
 const createOrderSchema = Joi.object({
-    name: name.required(),
-    total: total.required(),
+    id: id.required(),
+    clientId: clientId.required(),
+    orderDate: orderDate.required(),
+    delivered: delivered,
+    total: total,
     abono: abono,
     saldo: saldo,
 });
 
 const updateOrderSchema = Joi.object({
-    name: name,
+    id: id,
+    clientId: clientId,
+    delivered: delivered,
+    orderDate: orderDate,
     total: total,
     abono: abono,
-    saldo: saldo
+    saldo: saldo,
 });
 
 const getOrderSchema = Joi.object({

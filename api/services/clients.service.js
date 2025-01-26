@@ -33,7 +33,9 @@ class ClientsService {
     }
 
     find() {
-        return this.clients;
+        return this.clients.map(({ id, name, lastname, phone }) => ({
+            id, name, lastname, phone
+        }));
     }
 
     findOne(id) {
