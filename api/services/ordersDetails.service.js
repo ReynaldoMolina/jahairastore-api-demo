@@ -13,17 +13,15 @@ class OrderDetailsService {
             this.orderDetail.push(
                 {
                     id: (index + 1).toString(),
-                    orderId: faker.number.int({min: 0, max: 20}),
-                    productId: faker.number.int({min: 0, max: 20}),
-                    productName: faker.commerce.productName(),
+                    orderId: faker.number.int({min: 1, max: 20}),
+                    productId: faker.number.int({min: 1, max: 20}),
                     sellPrice: faker.commerce.price(),
                     quantity: faker.number.int({min: 1, max: 5}),
                 },
                 {
                     id: (index + 1),
-                    orderId: faker.number.int({min: 0, max: 20}),
-                    productId: faker.number.int({min: 0, max: 20}),
-                    productName: faker.commerce.productName(),
+                    orderId: faker.number.int({min: 1, max: 20}),
+                    productId: faker.number.int({min: 1, max: 20}),
                     sellPrice: faker.commerce.price(),
                     quantity: faker.number.int({min: 1, max: 5}),
                 }
@@ -41,8 +39,8 @@ class OrderDetailsService {
     }
 
     find() {
-        return this.orderDetail.map(({ id, productId, productName, clientId, sellPrice, quantity }) => ({
-            id, productId, productName, clientId, sellPrice, quantity
+        return this.orderDetail.map(({ orderId, productId, sellPrice, quantity }) => ({
+            orderId, productId, sellPrice, quantity
         }));
     }
 

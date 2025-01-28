@@ -12,7 +12,7 @@ class OrdersService {
         for (let index = 0; index < limit; index++) {
             this.orders.push({
                 id: (index + 1).toString(),
-                clientId: faker.number.int({min: 0, max: 20}),
+                clientId: faker.number.int({min: 1, max: 20}),
                 delivered: faker.datatype.boolean(),
                 // orderDate: faker.date.past({years: 1}).toLocaleDateString('es-NI'),
                 orderDate: faker.date.past({years: 1}).toISOString().substring(0, 10),
@@ -25,7 +25,7 @@ class OrdersService {
 
     async create(data) {
         const newOrder = {
-            id: faker.number.int({min:20, max: 1000}).toString(),
+            id: faker.number.int({min:21, max: 100}).toString(),
             ...data
         }
         this.orders.push(newOrder);
