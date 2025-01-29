@@ -8,18 +8,11 @@ class OrderDetailsService {
     }
 
     generate() {
-        const limit = 10;
+        const limit = 30;
         for (let index = 0; index < limit; index++) {
             this.orderDetail.push(
                 {
                     id: (index + 1).toString(),
-                    orderId: faker.number.int({min: 1, max: 20}),
-                    productId: faker.number.int({min: 1, max: 20}),
-                    sellPrice: faker.commerce.price(),
-                    quantity: faker.number.int({min: 1, max: 5}),
-                },
-                {
-                    id: (index + 1),
                     orderId: faker.number.int({min: 1, max: 20}),
                     productId: faker.number.int({min: 1, max: 20}),
                     sellPrice: faker.commerce.price(),
@@ -39,13 +32,13 @@ class OrderDetailsService {
     }
 
     find() {
-        return this.orderDetail.map(({ orderId, productId, sellPrice, quantity }) => ({
-            orderId, productId, sellPrice, quantity
+        return this.orderDetail.map(({ id, orderId, productId, sellPrice, quantity }) => ({
+            id, orderId, productId, sellPrice, quantity
         }));
     }
 
-    findOne(id) {
-        const orderDetail = this.orderDetail.find((orderDetail) => orderDetail.id === id);
+    findOrder(id) {
+        const orderDetail = this.orderDetail.filter((detail) => detail.orderId == id);
         if (!orderDetail) {
             throw boom.notFound('orderDetail not found');
         }

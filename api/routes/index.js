@@ -2,7 +2,7 @@ const express = require('express');
 
 const clientsRouter = require('./clients.router');
 const ordersRouter = require('./orders.router');
-const ordersDetailsRouter = require('./ordersDetails.router');
+const ordersDetailsRouter = require('./ordersdetails.router');
 //const receiptsRouter = require('./receipts.router');
 const providersRouter = require('./providers.router');
 //const purchasesRouter = require('./purchases.router');
