@@ -11,23 +11,25 @@ class ProductsService {
         const limit = 20;
         for (let index = 0; index < limit; index++) {
             this.products.push({
-                id: (index + 1).toString(),
+                id: (index + 1),
                 sheinId: faker.number.int({min: 100000, max: 999999}),
                 provider: faker.company.name(),
                 category: "Shein",
                 name: faker.commerce.productName(),
                 addedDate: faker.date.past({years: 1}).toISOString().substring(0, 10),
-                costPrice: faker.commerce.price(),
-                sellPrice: faker.commerce.price(),
-                profit: faker.commerce.price(),
+                costPrice: faker.number.int({min: 1, max: 100}),
+                sellPrice: faker.number.int({min: 1, max: 100}),
+                profit: faker.number.int({min: 1, max: 100}),
                 description: faker.commerce.productDescription(),
             });
         }
     }
 
     async create(data) {
+        const index = this.products.length - 1;
+        const lastId = this.products[index].id;
         const newProduct = {
-            id: faker.number.int({max: 10000}).toString(),
+            id: lastId + 1,
             ...data
         }
         this.products.push(newProduct);

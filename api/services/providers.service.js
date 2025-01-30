@@ -11,7 +11,7 @@ class ProvidersService {
         const limit = 20;
         for (let index = 0; index < limit; index++) {
             this.providers.push({
-                id: (index + 1).toString(),
+                id: (index + 1),
                 company: faker.company.name(),
                 contact: faker.person.firstName() + ' ' + faker.person.lastName(),
                 phone: "+505 2315 1234",
@@ -24,8 +24,10 @@ class ProvidersService {
     }
 
     async create(data) {
+        const index = this.providers.length - 1;
+        const lastId = this.providers[index].id;
         const newProvider = {
-            id: faker.number.int({max: 10000}).toString(),
+            id: lastId + 1,
             ...data
         }
         this.providers.push(newProvider);
@@ -33,7 +35,8 @@ class ProvidersService {
     }
 
     find() {
-        return this.providers;
+        return this.providers.map(({ company, phone }) =>
+        ({ company, phone }));
     }
 
     findOne(id) {

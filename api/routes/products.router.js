@@ -23,7 +23,7 @@ router.get('/:id',
   validatorHandler(getProductSchema, 'params'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const id = Number(req.params.id);
       const product = await service.findOne(id);
       res.json(product);
     } catch (error) {
@@ -48,7 +48,7 @@ router.patch('/:id',
   validatorHandler(updateProductSchema, 'body'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const id = Number(req.params.id);
       const body = req.body;
       const product = await service.update(id, body);
       res.json(product);
@@ -61,7 +61,7 @@ router.patch('/:id',
 //delete register
 router.delete('/:id', async (req, res, next) => {
     try {
-        const { id } = req.params;
+        const id = Number(req.params.id);
         const product = await service.delete(id);
         res.json(product);
     } catch (error) {

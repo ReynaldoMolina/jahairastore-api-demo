@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 //register filter
 router.get('/filter', (req, res) => {
-    res.send('Yo soy un filter');
+  res.send('Yo soy un filter');
 });
 
 //get url parameters - get one register
@@ -23,7 +23,7 @@ router.get('/:id',
   validatorHandler(getOrderSchema, 'params'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const id = Number(req.params.id);
       const order = await service.findOne(id);
       res.json(order);
     } catch (error) {
@@ -48,7 +48,7 @@ router.patch('/:id',
   validatorHandler(updateOrderSchema, 'body'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const id = Number(req.params.id);
       const body = req.body;
       const order = await service.update(id, body);
       res.json(order);
@@ -61,7 +61,7 @@ router.patch('/:id',
 //delete register
 router.delete('/:id', async (req, res, next) => {
     try {
-        const { id } = req.params;
+        const id = Number(req.params.id);
         const order = await service.delete(id);
         res.json(order);
     } catch (error) {

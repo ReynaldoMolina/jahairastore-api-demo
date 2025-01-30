@@ -8,14 +8,14 @@ class OrderDetailsService {
     }
 
     generate() {
-        const limit = 30;
+        const limit = 20;
         for (let index = 0; index < limit; index++) {
             this.orderDetail.push(
                 {
-                    id: (index + 1).toString(),
+                    id: (index + 1),
                     orderId: faker.number.int({min: 1, max: 20}),
                     productId: faker.number.int({min: 1, max: 20}),
-                    sellPrice: faker.commerce.price(),
+                    sellPrice: faker.number.int({min: 1, max: 100}),
                     quantity: faker.number.int({min: 1, max: 5}),
                 }
             );
@@ -23,8 +23,10 @@ class OrderDetailsService {
     }
 
     async create(data) {
+        const index = this.orderDetail.length - 1;
+        const lastId = this.orderDetail[index].id;
         const newOrderDetail = {
-            id: faker.number.int({max: 1000}).toString(),
+            id: lastId + 1,
             ...data
         }
         this.orderDetail.push(newOrderDetail);

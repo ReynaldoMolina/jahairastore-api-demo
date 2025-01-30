@@ -11,21 +11,22 @@ class OrdersService {
         const limit = 20;
         for (let index = 0; index < limit; index++) {
             this.orders.push({
-                id: (index + 1).toString(),
+                id: (index + 1),
                 clientId: faker.number.int({min: 1, max: 20}),
                 delivered: faker.datatype.boolean(),
-                // orderDate: faker.date.past({years: 1}).toLocaleDateString('es-NI'),
                 orderDate: faker.date.past({years: 1}).toISOString().substring(0, 10),
-                total: faker.commerce.price(),
-                abono: faker.commerce.price(),
-                saldo: faker.commerce.price()
+                abono: faker.number.int({min: 100, max: 1000}),
+                saldo: faker.number.int({min: 100, max: 1000}),
+                total: faker.number.int({min: 100, max: 1000}),
             });
         }
     }
 
     async create(data) {
+        const index = this.orders.length - 1;
+        const lastId = this.orders[index].id;
         const newOrder = {
-            id: faker.number.int({min:21, max: 100}).toString(),
+            id: lastId + 1,
             ...data
         }
         this.orders.push(newOrder);

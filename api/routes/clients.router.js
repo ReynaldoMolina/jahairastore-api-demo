@@ -23,9 +23,7 @@ router.get('/:id',
   validatorHandler(getClientSchema, 'params'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
-      console.log(id);
-      
+      const id = Number(req.params.id);
       const client = await service.findOne(id);
       res.json(client);
     } catch (error) {
@@ -50,7 +48,7 @@ router.patch('/:id',
   validatorHandler(updateClientSchema, 'body'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const id = Number(req.params.id);
       const body = req.body;
       const client = await service.update(id, body);
       res.json(client);
@@ -63,7 +61,7 @@ router.patch('/:id',
 //delete register
 router.delete('/:id', async (req, res, next) => {
     try {
-        const { id } = req.params;
+        const id = Number(req.params.id);
         const client = await service.delete(id);
         res.json(client);
     } catch (error) {

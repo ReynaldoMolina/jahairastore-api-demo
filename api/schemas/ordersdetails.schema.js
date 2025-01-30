@@ -3,8 +3,8 @@ const Joi = require('joi');
 const id = Joi.number().integer();
 const orderId = Joi.number().integer();
 const productId = Joi.number().integer();
-const sellPrice = Joi.number().precision(2);
-const quantity = Joi.number().precision(2);
+const sellPrice = Joi.number().integer();
+const quantity = Joi.number().integer();
 
 const createOrderDetailSchema = Joi.object({
     orderId: orderId.required(),

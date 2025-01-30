@@ -9,13 +9,13 @@ const service = new ProvidersService();
 
 //get all registers
 router.get('/', async (req, res) => {
-    const providers = await service.find();
-    res.json(providers);
+  const providers = await service.find();
+  res.json(providers);
 });
 
 //register filter
 router.get('/filter', (req, res) => {
-    res.send('Yo soy un filter');
+  res.send('Yo soy un filter');
 });
 
 //get url parameters - get one register
@@ -23,7 +23,7 @@ router.get('/:id',
   validatorHandler(getProviderSchema, 'params'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const id = Number(req.params.id);
       const provider = await service.findOne(id);
       res.json(provider);
     } catch (error) {
@@ -48,7 +48,7 @@ router.patch('/:id',
   validatorHandler(updateProviderSchema, 'body'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const id = Number(req.params.id);
       const body = req.body;
       const provider = await service.update(id, body);
       res.json(provider);
@@ -61,11 +61,11 @@ router.patch('/:id',
 //delete register
 router.delete('/:id', async (req, res, next) => {
     try {
-        const { id } = req.params;
-        const provider = await service.delete(id);
-        res.json(provider);
+      const id = Number(req.params.id);
+      const provider = await service.delete(id);
+      res.json(provider);
     } catch (error) {
-        next(error);
+      next(error);
     }
 });
 

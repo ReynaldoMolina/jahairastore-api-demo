@@ -23,7 +23,7 @@ router.get('/:id',
   validatorHandler(getCategorySchema, 'params'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const id = Number(req.params.id);
       const category = await service.findOne(id);
       res.json(category);
     } catch (error) {
@@ -48,7 +48,7 @@ router.patch('/:id',
   validatorHandler(updateCategorySchema, 'body'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const id = Number(req.params.id);
       const body = req.body;
       const category = await service.update(id, body);
       res.json(category);
@@ -61,7 +61,7 @@ router.patch('/:id',
 //delete register
 router.delete('/:id', async (req, res, next) => {
     try {
-        const { id } = req.params;
+        const id = Number(req.params.id);
         const category = await service.delete(id);
         res.json(category);
     } catch (error) {

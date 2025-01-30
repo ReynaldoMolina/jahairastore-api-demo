@@ -5,23 +5,25 @@ class CategoriesService {
     constructor() {
         this.categories = [
             {
-                id: '1',
+                id: 1,
                 name: "Shein"
             },
             {
-                id: '2',
+                id: 2,
                 name: "Útiles escolares"
             },
             {
-                id: '3',
+                id: 3,
                 name: "Ropa"
             },
         ];
     }
 
     async create(data) {
+        const index = this.categories.length - 1;
+        const lastId = this.categories[index].id;
         const newCategory = {
-            id: faker.number.int({min: 20, max:100}).toString(),
+            id: lastId + 1,
             ...data
         }
         this.categories.push(newCategory);
@@ -29,10 +31,7 @@ class CategoriesService {
     }
 
     find() {
-        return this.categories.map(({ id, name }) => ({
-            id,
-            name
-        }));
+        return this.categories;
     }
 
     findOne(id) {

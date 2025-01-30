@@ -11,7 +11,7 @@ class ClientsService {
         const limit = 20;
         for (let index = 0; index < limit; index++) {
             this.clients.push({
-                id: (index + 1).toString(),
+                id: (index + 1),
                 name: faker.person.firstName(),
                 lastname: faker.person.lastName(),
                 phone: "+505 1234 5678",
@@ -24,8 +24,10 @@ class ClientsService {
     }
 
     async create(data) {
+        const index = this.clients.length - 1;
+        const lastId = this.clients[index].id;
         const newClient = {
-            id: faker.number.int({min:20, max: 1000}).toString(),
+            id: lastId + 1,
             ...data
         }
         this.clients.push(newClient);
