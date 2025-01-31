@@ -35,8 +35,8 @@ class ProvidersService {
     }
 
     find() {
-        return this.providers.map(({ company, phone }) =>
-        ({ company, phone }));
+        return this.providers.map(({ id, company, phone }) =>
+        ({ id, company, phone }));
     }
 
     findOne(id) {

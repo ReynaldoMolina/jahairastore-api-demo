@@ -13,11 +13,10 @@ class OrdersService {
             this.orders.push({
                 id: (index + 1),
                 clientId: faker.number.int({min: 1, max: 20}),
-                delivered: faker.datatype.boolean(),
+                paid: faker.datatype.boolean(),
                 orderDate: faker.date.past({years: 1}).toISOString().substring(0, 10),
-                abono: faker.number.int({min: 100, max: 1000}),
-                saldo: faker.number.int({min: 100, max: 1000}),
                 total: faker.number.int({min: 100, max: 1000}),
+                abono: faker.number.int({min: 100, max: 1000}),
             });
         }
     }
@@ -34,8 +33,8 @@ class OrdersService {
     }
 
     find() {
-        return this.orders.map(({ id, orderDate, clientId, total, abono, saldo }) => ({
-            id, orderDate, clientId, total, abono, saldo
+        return this.orders.map(({ id, orderDate, paid, clientId, total, abono }) => ({
+            id, orderDate, paid, clientId, total, abono
         }));
     }
 
