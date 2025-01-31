@@ -16,7 +16,35 @@ class CategoriesService {
                 id: 3,
                 name: "Ropa"
             },
-        ];
+            {
+                id: 4,
+                name: "Electrónica"
+            },
+            {
+                id: 5,
+                name: "Hogar y Cocina"
+            },
+            {
+                id: 6,
+                name: "Juguetes y Juegos"
+            },
+            {
+                id: 7,
+                name: "Deportes"
+            },
+            {
+                id: 8,
+                name: "Belleza y Cuidado Personal"
+            },
+            {
+                id: 9,
+                name: "Libros"
+            },
+            {
+                id: 10,
+                name: "Mascotas"
+            }
+        ];        
     }
 
     async create(data) {
