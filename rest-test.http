@@ -1,11 +1,9 @@
-PATCH http://localhost:3001/api/v1/purchases/2
-Content-Type: application/json
+GET http://localhost:3001/api/v1/purchasesdetails/
+# Content-Type: application/json
 
-{
-  "id": 2,
-  "providerId": 12,
-  "paid": false,
-  "purchaseDate": "2023-09-21",
-  "total": 540,
-  "abono": 0
-}
+# {
+#   "purchaseId": 50,
+#   "productId": 18,
+#   "costPrice": 60,
+#   "quantity": 0
+# }
