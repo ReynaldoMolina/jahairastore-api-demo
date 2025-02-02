@@ -13,7 +13,6 @@ class ProductsService {
                 addedDate: "2024-03-15",
                 costPrice: 25,
                 sellPrice: 40,
-                profit: 15,
                 description: "A stylish and comfortable cotton shirt, perfect for casual and formal occasions."
             },
             {
@@ -25,7 +24,6 @@ class ProductsService {
                 addedDate: "2023-09-22",
                 costPrice: 10,
                 sellPrice: 20,
-                profit: 10,
                 description: "Set of high-quality notebooks for school and office use."
             },
             {
@@ -37,7 +35,6 @@ class ProductsService {
                 addedDate: "2023-11-10",
                 costPrice: 30,
                 sellPrice: 50,
-                profit: 20,
                 description: "Comfortable and durable slim fit jeans, ideal for everyday wear."
             },
             {
@@ -49,7 +46,6 @@ class ProductsService {
                 addedDate: "2023-07-18",
                 costPrice: 35,
                 sellPrice: 60,
-                profit: 25,
                 description: "Lightweight and stylish running sneakers with cushioned support."
             },
             {
@@ -61,7 +57,6 @@ class ProductsService {
                 addedDate: "2024-01-05",
                 costPrice: 15,
                 sellPrice: 35,
-                profit: 20,
                 description: "Retro-inspired sunglasses with UV protection and high-quality frames."
             },
             {
@@ -73,7 +68,6 @@ class ProductsService {
                 addedDate: "2023-08-30",
                 costPrice: 45,
                 sellPrice: 75,
-                profit: 30,
                 description: "Elegant leather shoulder bag with multiple compartments."
             },
             {
@@ -85,7 +79,6 @@ class ProductsService {
                 addedDate: "2023-12-12",
                 costPrice: 20,
                 sellPrice: 45,
-                profit: 25,
                 description: "A light and airy summer dress made from breathable fabric."
             },
             {
@@ -97,7 +90,6 @@ class ProductsService {
                 addedDate: "2023-10-25",
                 costPrice: 18,
                 sellPrice: 35,
-                profit: 17,
                 description: "Non-slip yoga mat with high-density foam for comfort."
             },
             {
@@ -109,7 +101,6 @@ class ProductsService {
                 addedDate: "2024-02-14",
                 costPrice: 55,
                 sellPrice: 90,
-                profit: 35,
                 description: "High-quality wireless earbuds with noise cancellation feature."
             },
             {
@@ -121,7 +112,6 @@ class ProductsService {
                 addedDate: "2023-06-20",
                 costPrice: 40,
                 sellPrice: 70,
-                profit: 30,
                 description: "Lightweight sneakers designed for casual and athletic use."
             },
             {
@@ -133,7 +123,6 @@ class ProductsService {
                 addedDate: "2023-07-30",
                 costPrice: 20,
                 sellPrice: 45,
-                profit: 25,
                 description: "Premium leather wallet with multiple card slots."
             },
             {
@@ -145,7 +134,6 @@ class ProductsService {
                 addedDate: "2023-09-15",
                 costPrice: 22,
                 sellPrice: 40,
-                profit: 18,
                 description: "Soft cotton polo shirt, suitable for casual and business settings."
             },
             {
@@ -157,7 +145,6 @@ class ProductsService {
                 addedDate: "2023-11-25",
                 costPrice: 50,
                 sellPrice: 85,
-                profit: 35,
                 description: "Elegant and durable leather shoes for formal occasions."
             },
             {
@@ -169,7 +156,6 @@ class ProductsService {
                 addedDate: "2023-10-05",
                 costPrice: 28,
                 sellPrice: 55,
-                profit: 27,
                 description: "Warm and cozy hoodie, designed for both style and comfort."
             },
             {
@@ -181,7 +167,6 @@ class ProductsService {
                 addedDate: "2023-12-20",
                 costPrice: 30,
                 sellPrice: 50,
-                profit: 20,
                 description: "Durable and stylish canvas backpack with multiple compartments."
             },
             {
@@ -193,7 +178,6 @@ class ProductsService {
                 addedDate: "2024-01-10",
                 costPrice: 65,
                 sellPrice: 100,
-                profit: 35,
                 description: "Multifunctional smartwatch with heart rate and fitness tracking."
             },
             {
@@ -205,7 +189,6 @@ class ProductsService {
                 addedDate: "2023-06-25",
                 costPrice: 40,
                 sellPrice: 75,
-                profit: 35,
                 description: "Waterproof fitness tracker with step and sleep monitoring."
             },
             {
@@ -217,7 +200,6 @@ class ProductsService {
                 addedDate: "2023-11-08",
                 costPrice: 18,
                 sellPrice: 35,
-                profit: 17,
                 description: "Complete art supplies kit with pencils, colors, and brushes."
             },
             {
@@ -229,7 +211,6 @@ class ProductsService {
                 addedDate: "2024-02-01",
                 costPrice: 38,
                 sellPrice: 65,
-                profit: 27,
                 description: "Lightweight and durable sneakers for everyday wear."
             },
             {
@@ -241,7 +222,6 @@ class ProductsService {
                 addedDate: "2023-08-14",
                 costPrice: 15,
                 sellPrice: 30,
-                profit: 15,
                 description: "Comfortable and stylish t-shirt with modern graphic design."
             }
         ];
@@ -260,7 +240,7 @@ class ProductsService {
     //             addedDate: faker.date.past({years: 1}).toISOString().substring(0, 10),
     //             costPrice: faker.number.int({min: 1, max: 100}),
     //             sellPrice: faker.number.int({min: 1, max: 100}),
-    //             profit: faker.number.int({min: 1, max: 100}),
+    //             .int({min: 1, max: 100}),
     //             description: faker.commerce.productDescription(),
     //         });
     //     }

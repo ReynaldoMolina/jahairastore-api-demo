@@ -1,9 +1,6 @@
-GET http://localhost:3001/api/v1/providers/1
+GET http://localhost:3001/api/v1/expenses/
 # Content-Type: application/json
 
 # {
-#   "orderId": 1,
-#   "productId": 2,
-#   "sellPrice": 10,
-#   "quantity": 10
+#   "concepto": "HOLA REY"
 # }
