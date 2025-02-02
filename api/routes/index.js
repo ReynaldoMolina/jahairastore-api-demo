@@ -6,7 +6,7 @@ const ordersDetailsRouter = require('./ordersdetails.router');
 const receiptsRouter = require('./receipts.router');
 const providersRouter = require('./providers.router');
 const expensesRouter = require('./expenses.router');
-// const purchasesRouter = require('./purchases.router');
+const purchasesRouter = require('./purchases.router');
 const productsRouter = require('./products.router');
 const categoriesRouter = require('./categories.router');
 
@@ -19,7 +19,7 @@ function routerApi(app) {
   router.use('/ordersdetails', ordersDetailsRouter);
   router.use('/receipts', receiptsRouter);
   router.use('/providers', providersRouter);
-  // router.use('/purchases', purchasesRouter);
+  router.use('/purchases', purchasesRouter);
   router.use('/expenses', expensesRouter);
   router.use('/products', productsRouter);
   router.use('/categories', categoriesRouter);

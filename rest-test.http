@@ -1,6 +1,11 @@
-GET http://localhost:3001/api/v1/expenses/
-# Content-Type: application/json
+PATCH http://localhost:3001/api/v1/purchases/2
+Content-Type: application/json
 
-# {
-#   "concepto": "HOLA REY"
-# }
+{
+  "id": 2,
+  "providerId": 12,
+  "paid": false,
+  "purchaseDate": "2023-09-21",
+  "total": 540,
+  "abono": 0
+}
