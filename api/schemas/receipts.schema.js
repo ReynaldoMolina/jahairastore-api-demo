@@ -4,7 +4,7 @@ const id = Joi.number().integer();
 const orderId = Joi.number().integer();
 const clientId = Joi.number().integer();
 const receiptDate = Joi.date();
-const abono = Joi.number().integer();
+const abono = Joi.number();
 const concepto = Joi.string();
 
 const createReceiptSchema = Joi.object({

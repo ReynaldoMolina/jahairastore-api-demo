@@ -6,8 +6,8 @@ const provider = Joi.string().max(40);
 const category = Joi.string().max(40);
 const name = Joi.string().max(40);
 const addedDate = Joi.date();
-const costPrice = Joi.number().precision(2);
-const sellPrice = Joi.number().precision(2);
+const costPrice = Joi.number();
+const sellPrice = Joi.number();
 const description = Joi.string().max(200);
 
 const createProductSchema = Joi.object({
