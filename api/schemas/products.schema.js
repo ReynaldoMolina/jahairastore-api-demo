@@ -11,25 +11,25 @@ const sellPrice = Joi.number();
 const description = Joi.string().max(200);
 
 const createProductSchema = Joi.object({
-    sheinId: sheinId,
+    sheinId: sheinId.allow(''),
     provider: provider.required(),
     category: category.required(),
     name: name.required(),
     addedDate: addedDate.required(),
     costPrice: costPrice.required(),
     sellPrice: sellPrice.required(),
-    description: description
+    description: description.allow('')
 });
 
 const updateProductSchema = Joi.object({
-    sheinId: sheinId,
-    provider: provider,
-    category: category,
-    name: name,
-    addedDate: addedDate,
-    costPrice: costPrice,
-    sellPrice: sellPrice,
-    description: description
+    sheinId: sheinId.allow(''),
+    provider: provider.required(),
+    category: category.required(),
+    name: name.required(),
+    addedDate: addedDate.required(),
+    costPrice: costPrice.required(),
+    sellPrice: sellPrice.required(),
+    description: description.allow('')
 });
 
 const getProductSchema = Joi.object({

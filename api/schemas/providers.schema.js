@@ -12,21 +12,21 @@ const address = Joi.string().max(100);
 const createProviderSchema = Joi.object({
     company: company.required(),
     contact: contact.required(),
-    phone: phone,
-    municipio: municipio,
-    city: city,
-    country: country,
-    address: address,
+    phone: phone.allow(''),
+    municipio: municipio.allow(''),
+    city: city.allow(''),
+    country: country.allow(''),
+    address: address.allow(''),
 });
 
 const updateProviderSchema = Joi.object({
-    company: company,
-    contact: contact,
-    phone: phone,
-    city: city,
-    municipio: municipio,
-    country: country,
-    address: address
+    company: company.required(),
+    contact: contact.required(),
+    phone: phone.allow(''),
+    city: city.allow(''),
+    municipio: municipio.allow(''),
+    country: country.allow(''),
+    address: address.allow('')
 });
 
 const getProviderSchema = Joi.object({

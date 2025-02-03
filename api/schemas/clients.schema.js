@@ -12,21 +12,21 @@ const address = Joi.string().max(100);
 const createClientSchema = Joi.object({
     name: name.required(),
     lastname: lastname.required(),
-    phone: phone,
-    municipio: municipio,
-    departamento: departamento,
-    country: country,
-    address: address,
+    phone: phone.allow(''),
+    municipio: municipio.allow(''),
+    departamento: departamento.allow(''),
+    country: country.allow(''),
+    address: address.allow(''),
 });
 
 const updateClientSchema = Joi.object({
     name: name,
     lastname: lastname,
-    phone: phone,
-    municipio: municipio,
-    departamento: departamento,
-    country: country,
-    address: address
+    phone: phone.allow(''),
+    municipio: municipio.allow(''),
+    departamento: departamento.allow(''),
+    country: country.allow(''),
+    address: address.allow('')
 });
 
 const getClientSchema = Joi.object({
