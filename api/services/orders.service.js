@@ -11,7 +11,7 @@ class OrdersService {
 
   async create(data) {
     const registers = await models.Orders.findAll();
-    if (registers.length > 5) {
+    if (registers.length > 4) {
       throw boom.badRequest('In this demo you can add up to 5 items');
     }
     const newRegister = await models.Orders.create(data);
