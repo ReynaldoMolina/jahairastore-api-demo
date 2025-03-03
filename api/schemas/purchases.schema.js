@@ -3,24 +3,21 @@ const Joi = require('joi');
 const id = Joi.number().integer();
 const providerId = Joi.number();
 const purchaseDate = Joi.date();
-const paid = Joi.bool();
-const total = Joi.number();
-const abono = Joi.number();
+const state = Joi.string();
+const delivery = Joi.number();
 
 const createPurchaseSchema = Joi.object({
     providerId: providerId.required(),
     purchaseDate: purchaseDate.required(),
-    paid: paid,
-    total: total,
-    abono: abono
+    state: state.required(),
+    delivery: delivery.allow('')
 });
 
 const updatePurchaseSchema = Joi.object({
-    providerId: providerId,
-    purchaseDate: purchaseDate,
-    paid: paid,
-    total: total,
-    abono: abono,
+    providerId: providerId.required(),
+    purchaseDate,
+    state,
+    delivery: delivery.allow('')
 });
 
 const getPurchaseSchema = Joi.object({

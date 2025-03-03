@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 const id = Joi.number().integer();
-const name = Joi.string().max(40);
+const name = Joi.string().max(100);
 
 const createCategorySchema = Joi.object({
     name: name.required(),

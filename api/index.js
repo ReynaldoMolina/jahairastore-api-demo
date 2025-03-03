@@ -13,7 +13,7 @@ app.use(express.json());
 const whitelist = [
   'http://localhost:3000',
   'http://localhost:5500',
-  'http://192.168.1.9:3000',
+  'http://192.168.1.7:3000',
   'https://reynaldomolina.github.io'
 ];
 const options = {

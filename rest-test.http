@@ -1,9 +1,12 @@
-GET http://localhost:3001/api/v1/purchasesdetails/
+GET http://localhost:3001/api/v1/clients
 # Content-Type: application/json
 
 # {
-#   "purchaseId": 50,
-#   "productId": 18,
-#   "costPrice": 60,
-#   "quantity": 0
+#   "name": "Juan Carlos",
+#   "lastname": "Rivera",
+#   "phone": "+505 2222 2222",
+#   "municipio": "",
+#   "city": "",
+#   "country": "",
+#   "address": ""
 # }

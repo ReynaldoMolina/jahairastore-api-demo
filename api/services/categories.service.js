@@ -1,100 +1,48 @@
-const { faker } = require('@faker-js/faker');
 const boom = require('@hapi/boom');
+const { models } = require('../libs/sequelize');
+
+const registerName = 'Category';
 
 class CategoriesService {
-    constructor() {
-        this.categories = [
-            {
-                id: 1,
-                name: "Shein"
-            },
-            {
-                id: 2,
-                name: "Útiles escolares"
-            },
-            {
-                id: 3,
-                name: "Ropa"
-            },
-            {
-                id: 4,
-                name: "Electrónica"
-            },
-            {
-                id: 5,
-                name: "Hogar y Cocina"
-            },
-            {
-                id: 6,
-                name: "Juguetes y Juegos"
-            },
-            {
-                id: 7,
-                name: "Deportes"
-            },
-            {
-                id: 8,
-                name: "Belleza y Cuidado Personal"
-            },
-            {
-                id: 9,
-                name: "Libros"
-            },
-            {
-                id: 10,
-                name: "Mascotas"
-            }
-        ];        
-    }
+  constructor() {
+    //       
+  }
 
-    async create(data) {
-        const index = this.categories.length - 1;
-        const lastId = this.categories[index].id;
-        const newCategory = {
-            id: lastId + 1,
-            ...data
-        }
-        this.categories.push(newCategory);
-        return newCategory;
+  async create(data) {
+    const registers = await models.Categories.findAll();
+    if (registers.length > 5) {
+      throw boom.badRequest('In this demo you can add up to 5 items');
     }
+    const newRegister = await models.Categories.create(data);
+    return newRegister;
+  }
 
-    find() {
-        return this.categories;
+  async find() {
+    const registers = await models.Categories.findAll({
+      order: [['id', 'ASC']]
+    });
+    return registers;
+  }
+
+  async findOne(id) {
+    const register = await models.Categories.findByPk(id);
+    if (!register) {
+      throw boom.notFound(`${registerName} not found`);
     }
+    return register;
+  }
 
-    findOne(id) {
-        const category = this.categories.find((category) => category.id === id);
-        if (!category) {
-            throw boom.notFound('category not found');
-        }
-        if (category.isBlocked) {
-            throw boom.conflict('category is blocked');
-        }
-        return category;
-    }
+  async update(id, changes) {
+    const register = await this.findOne(id);
+    const data = await register.update(changes);
+    return data;
+  }
 
-    update(id, changes) {
-        const index = this.categories.findIndex((category) => category.id === id);
-        if (index === -1) {
-            throw boom.notFound('category not found');
-        }
-        const category = this.categories[index];
-
-        this.categories[index] = {
-            ...category,
-            ...changes
-        };
-        return this.categories[index];
-    }
-
-    delete(id) {
-        const index = this.categories.findIndex((category) => category.id === id);
-        if (index === -1) {
-            throw boom.notFound('category not found');
-        }
-        this.categories.splice(index, 1);
-        return { id };
-    }
+  async delete(id) {
+    const register = await this.findOne(id)
+    await register.destroy();
+    return { id };
+  }
 }
 
 module.exports = CategoriesService;

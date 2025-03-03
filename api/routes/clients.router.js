@@ -7,15 +7,15 @@ const { createClientSchema, updateClientSchema, getClientSchema } = require('./.
 const router = express.Router();
 const service = new ClientsService();
 
-//get all registers
+// get all registers
 router.get('/', async (req, res) => {
-    const clients = await service.find();
-    res.json(clients);
+  const clients = await service.find();
+  res.json(clients);
 });
 
 //register filter
 router.get('/filter', (req, res) => {
-    res.send('Yo soy un filter');
+  res.send('Yo soy un filter');
 });
 
 //get url parameters - get one register
@@ -61,11 +61,11 @@ router.patch('/:id',
 //delete register
 router.delete('/:id', async (req, res, next) => {
     try {
-        const id = Number(req.params.id);
-        const client = await service.delete(id);
-        res.json(client);
+      const id = Number(req.params.id);
+      const client = await service.delete(id);
+      res.json(client);
     } catch (error) {
-        next(error);
+      next(error);
     }
 });
 
